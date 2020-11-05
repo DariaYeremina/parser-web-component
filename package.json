@@ -5,10 +5,15 @@
   "scripts": {
     "serve": "vue-cli-service serve",
     "build": "vue-cli-service build",
-    "lint": "vue-cli-service lint"
+    "lint": "vue-cli-service lint",
+    "wc-build": "npm run build -- --target wc --inline-vue --name old-page ./src/components/OldPage.vue",
+    "wc-test": "cd dist && live-server --port=8080 --entry-file=./demo.html"
   },
   "dependencies": {
+    "@vue/web-component-wrapper": "^1.2.0",
     "core-js": "^3.6.5",
+    "jquery": "^3.5.1",
+    "popper.js": "^1.16.1",
     "vue": "^2.6.11"
   },
   "devDependencies": {
@@ -34,6 +39,7 @@
     },
     "rules": {}
   },
+  "eslintIgnore": ["./assets/bootstrap/js/bootstrap.min.js"],
   "browserslist": [
     "> 1%",
     "last 2 versions",

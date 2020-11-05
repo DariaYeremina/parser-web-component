@@ -1,8 +1,7 @@
-import Vue from 'vue'
-import App from './App.vue'
+import Vue from 'vue';
+import OldPage from './components/OldPage.vue';
+import wrap from '@vue/web-component-wrapper';
 
-Vue.config.productionTip = false
+const CustomElement = wrap(Vue, OldPage);
 
-new Vue({
-  render: h => h(App),
-}).$mount('#app')
+window.customElements.define('old-page', CustomElement);
